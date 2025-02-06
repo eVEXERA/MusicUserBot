@@ -34,9 +34,9 @@ REPO = """
 if Config.BOT_TOKEN:
     bot = Client(
         "MusicPlayer",
-        api_id=config.API_ID,
-        api_hash=config.API_HASH,
-        bot_token=config.BOT_TOKEN,
+        api_id=Config.API_ID,
+        api_hash=Config.API_HASH,
+        bot_token=Config.BOT_TOKEN,
         in_memory=True,
     )
     client = bot
@@ -104,7 +104,7 @@ async def play_stream(_, message: Message, lang):
 
 
 @client.on_message(
-    filters.Command(["radio", "stream"], config.PREFIXES) & ~filters.private
+    filters.Command(["radio", "stream"], Config.PREFIXES) & ~filters.private
 )
 @register
 @language
@@ -490,7 +490,7 @@ async def import_playlist(_, message: Message, lang):
             k = await message.reply_text(lang["notFound"])
             return await delete_messages([message, k])
     elif "open.spotify.com/playlist/" in text:
-        if not config.SPOTIFY:
+        if not Config.SPOTIFY:
             k = await message.reply_text(lang["spotifyNotEnabled"])
             return await delete_messages([message, k])
         try:
