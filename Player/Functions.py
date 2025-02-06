@@ -68,7 +68,7 @@ async def Khoj(message: Message) -> Optional[Gana]:
                 progress_args=("Downloading...", lel, time.time()),
             )
             await lel.delete()
-            return Song(
+            return Gana(
                 {
                     "title": media.file_name or "N/A",
                     "source": reply.link,
@@ -286,7 +286,7 @@ async def special_to_normal(ctitle):
 async def get_youtube_playlist(pl_url: str, message: Message) -> AsyncIterator[Song]:
     pl = Playlist(pl_url)
     for i in range(len(list(pl))):
-        song = Song(pl[i], message)
+        song = Gana(pl[i], message)
         song.title = pl.videos[i].title
         yield song
 
@@ -306,7 +306,7 @@ async def get_spotify_playlist(pl_url: str, message: Message) -> AsyncIterator[S
             vs = VideosSearch(song_name, limit=1).result()
             if len(vs["result"]) > 0 and vs["result"][0]["type"] == "video":
                 video = vs["result"][0]
-                song = Song(video["link"], message)
+                song = Gana(video["link"], message)
                 song.title = video["title"]
                 yield song
         offset += len(resp["items"])
