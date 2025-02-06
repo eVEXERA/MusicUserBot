@@ -101,7 +101,7 @@ async def play_stream(_, message: Message, lang):
         await delete_messages([message, k])
 
 
-@client.on_message(filters.Command(["radio", "stream"], Config.PREFIXES) & ~filters.private)
+@client.on_message(filters.command(["radio", "stream"], Config.PREFIXES) & ~filters.private)
 @register
 @language
 @handle_error
