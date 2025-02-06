@@ -27,17 +27,17 @@ from typing import List, Tuple, Optional, AsyncIterator
 try:
     sp = Spotify(
         client_credentials_manager=SpotifyClientCredentials(
-            config.SPOTIFY_CLIENT_ID, config.SPOTIFY_CLIENT_SECRET
+            Config.SPOTIFY_CLIENT_ID, Config.SPOTIFY_CLIENT_SECRET
         )
     )
-    config.SPOTIFY = True
+    Config.SPOTIFY = True
 except BaseException:
     print(
         "WARNING: SPOTIFY_CLIENT_ID or SPOTIFY_CLIENT_SECRET is not set."
         "Bot will work fine but playing songs with spotify playlist won't work."
-        "Check your configs or .env file if you want to add them or ask @AsmSupport!"
+        "Check your Configs or .env file if you want to add them or ask @Itz_Your_4Bhi!"
     )
-    config.SPOTIFY = False
+    Config.SPOTIFY = False
 
 
 themes = [
@@ -83,7 +83,7 @@ async def Khoj(message: Message) -> Optional[Song]:
     is_yt_url, url = check_yt_url(query)
     if is_yt_url:
         return Song(url, message)
-    elif config.SPOTIFY and "open.spotify.com/track" in query:
+    elif Config.SPOTIFY and "open.spotify.com/track" in query:
         track_id = query.split("open.spotify.com/track/")[1].split("?")[0]
         track = sp.track(track_id)
         query = f'{" / ".join([artist["name"] for artist in track["artists"]])} - {track["name"]}'
