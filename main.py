@@ -101,9 +101,7 @@ async def play_stream(_, message: Message, lang):
         await delete_messages([message, k])
 
 
-@client.on_message(
-    filters.Command(["radio", "stream"], Config.PREFIXES) & ~filters.private
-)
+@client.on_message(filters.Command(["radio", "stream"], Config.PREFIXES) & ~filters.private)
 @register
 @language
 @handle_error
@@ -153,9 +151,7 @@ async def live_stream(_, message: Message, lang):
         await delete_messages([message, k])
 
 
-@client.on_message(
-    filters.command(["skip", "next"], Config.PREFIXES) & ~filters.private
-)
+@client.on_message(filters.command(["skip", "next"], Config.PREFIXES) & ~filters.private)
 @register
 @language
 @only_admins
@@ -202,9 +198,7 @@ async def mute_vc(_, message: Message, lang):
     await delete_messages([message, k])
 
 
-@client.on_message(
-    filters.command(["um", "unmute"], Config.PREFIXES) & ~filters.private
-)
+@client.on_message(filters.command(["um", "unmute"], Config.PREFIXES) & ~filters.private)
 @register
 @language
 @only_admins
@@ -234,9 +228,7 @@ async def pause_vc(_, message: Message, lang):
     await delete_messages([message, k])
 
 
-@client.on_message(
-    filters.command(["rs", "resume"], Config.PREFIXES) & ~filters.private
-)
+@client.on_message(filters.command(["rs", "resume"], Config.PREFIXES) & ~filters.private)
 @register
 @language
 @only_admins
@@ -251,9 +243,7 @@ async def resume_vc(_, message: Message, lang):
     await delete_messages([message, k])
 
 
-@client.on_message(
-    filters.command(["stop", "leave"], Config.PREFIXES) & ~filters.private
-)
+@client.on_message(filters.command(["stop", "leave"], Config.PREFIXES) & ~filters.private)
 @register
 @language
 @only_admins
@@ -271,9 +261,7 @@ async def leave_vc(_, message: Message, lang):
     await delete_messages([message, k])
 
 
-@client.on_message(
-    filters.command(["list", "queue"], Config.PREFIXES) & ~filters.private
-)
+@client.on_message(filters.command(["list", "queue"], Config.PREFIXES) & ~filters.private)
 @register
 @language
 @handle_error
@@ -287,9 +275,7 @@ async def queue_list(_, message: Message, lang):
     await delete_messages([message, k])
 
 
-@client.on_message(
-    filters.command(["mix", "shuffle"], Config.PREFIXES) & ~filters.private
-)
+@client.on_message(filters.command(["mix", "shuffle"], Config.PREFIXES) & ~filters.private)
 @register
 @language
 @only_admins
@@ -304,9 +290,7 @@ async def shuffle_list(_, message: Message, lang):
     await delete_messages([message, k])
 
 
-@client.on_message(
-    filters.command(["loop", "repeat"], Config.PREFIXES) & ~filters.private
-)
+@client.on_message(filters.command(["loop", "repeat"], Config.PREFIXES) & ~filters.private)
 @register
 @language
 @only_admins
@@ -323,9 +307,7 @@ async def loop_stream(_, message: Message, lang):
     await delete_messages([message, k])
 
 
-@client.on_message(
-    filters.command(["mode", "switch"], Config.PREFIXES) & ~filters.private
-)
+@client.on_message(filters.command(["mode", "switch"], Config.PREFIXES) & ~filters.private)
 @register
 @language
 @only_admins
@@ -342,9 +324,7 @@ async def switch_mode(_, message: Message, lang):
     await delete_messages([message, k])
 
 
-@client.on_message(
-    filters.command(["admins", "adminsonly"], Config.PREFIXES) & ~filters.private
-)
+@client.on_message(filters.command(["admins", "adminsonly"], Config.PREFIXES) & ~filters.private)
 @register
 @language
 @only_admins
@@ -361,9 +341,7 @@ async def admins_only(_, message: Message, lang):
     await delete_messages([message, k])
 
 
-@client.on_message(
-    filters.command(["lang", "language"], Config.PREFIXES) & ~filters.private
-)
+@client.on_message(filters.command(["lang", "language"], Config.PREFIXES) & ~filters.private)
 @register
 @language
 @only_admins
@@ -387,9 +365,7 @@ async def set_lang(_, message: Message, lang):
         await delete_messages([message, k])
 
 
-@client.on_message(
-    filters.command(["ep", "export"], Config.PREFIXES) & ~filters.private
-)
+@client.on_message(filters.command(["ep", "export"], Config.PREFIXES) & ~filters.private)
 @register
 @language
 @only_admins
@@ -412,9 +388,7 @@ async def export_queue(_, message: Message, lang):
         await delete_messages([message, k])
 
 
-@client.on_message(
-    filters.command(["ip", "import"], Config.PREFIXES) & ~filters.private
-)
+@client.on_message(filters.command(["ip", "import"], Config.PREFIXES) & ~filters.private)
 @register
 @language
 @only_admins
@@ -460,9 +434,7 @@ async def import_queue(_, message: Message, lang):
     await delete_messages([message, k])
 
 
-@client.on_message(
-    filters.command(["pl", "playlist"], Config.PREFIXES) & ~filters.private
-)
+@client.on_message(filters.command(["pl", "playlist"], Config.PREFIXES) & ~filters.private)
 @register
 @language
 @handle_error
@@ -517,9 +489,7 @@ async def import_playlist(_, message: Message, lang):
     await delete_messages([message, k])
 
 
-@client.on_message(
-    filters.command(["update", "restart"], Config.PREFIXES) & ~filters.private
-)
+@client.on_message(filters.command(["update", "restart"], Config.PREFIXES) & ~filters.private)
 @language
 @handle_error
 async def update_restart(_, message: Message, lang):
