@@ -12,7 +12,7 @@ import aiohttp
 import asyncio
 import aiofiles
 from Player import Config
-from Player import Song
+from Player import Gana
 from pyrogram import enums
 from pytube import Playlist
 from spotipy import Spotify
@@ -52,7 +52,7 @@ themes = [
 ]
 
 
-async def Khoj(message: Message) -> Optional[Song]:
+async def Khoj(message: Message) -> Optional[Gana]:
     query = ""
     reply = message.reply_to_message
     if reply:
@@ -82,12 +82,12 @@ async def Khoj(message: Message) -> Optional[Song]:
         return None
     is_yt_url, url = check_yt_url(query)
     if is_yt_url:
-        return Song(url, message)
+        return Gana(url, message)
     elif Config.SPOTIFY and "open.spotify.com/track" in query:
         track_id = query.split("open.spotify.com/track/")[1].split("?")[0]
         track = sp.track(track_id)
         query = f'{" / ".join([artist["name"] for artist in track["artists"]])} - {track["name"]}'
-        return Song(query, message)
+        return Gana(query, message)
     else:
         group = get_group(message.chat.id)
         vs = VideosSearch(
@@ -95,7 +95,7 @@ async def Khoj(message: Message) -> Optional[Song]:
         ).result()
         if len(vs["result"]) > 0 and vs["result"][0]["type"] == "video":
             video = vs["result"][0]
-            return Song(video["link"], message)
+            return Gana(video["link"], message)
     return None
 
 
