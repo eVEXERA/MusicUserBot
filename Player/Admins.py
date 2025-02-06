@@ -22,7 +22,7 @@ async def Teammates(message: Message):
             enums.ChatMemberStatus.ADMINISTRATOR,
         ]:
             return True
-        elif message.from_user.id in config.SUDOERS:
+        elif message.from_user.id in Config.SUDOERS:
             return True
     elif message.sender_chat:
         if message.sender_chat.id == message.chat.id:
