@@ -1,0 +1,12 @@
+"""
+Telegram @Itz_Your_4Bhi
+Copyright ©️ 2025
+"""
+
+.env
+.vscode
+__pycache__
+*/__pycache__
+*.session*
+*.session-journal
+unknown_errors.txt
