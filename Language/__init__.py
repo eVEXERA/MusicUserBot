@@ -7,4 +7,4 @@ import json
 
 
 def load(lang):
-    return json.load(open(f"./lang/English.json" ))
+    return json.load(open(f"./Language/English.json" ))
