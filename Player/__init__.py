@@ -3,7 +3,7 @@ Copyright ©️ 2025
 """
 
 from Player.Song import Gana
-from Language import load
+from lang import load
 from Player.Admins import BhaiChara, Teammates
 from Player.Config import Config
 from Player.Queue import Queue
