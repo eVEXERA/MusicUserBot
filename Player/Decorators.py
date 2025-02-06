@@ -5,7 +5,7 @@ Copyright ©️ 2025
 
 
 import time
-from Language import load
+from lang import load
 from Player import Config
 from Player.Stream import app
 from datetime import datetime
