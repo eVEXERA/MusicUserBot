@@ -121,21 +121,21 @@ def get_quality(song: Gana) -> MediaStream:
                 headers=song.headers,
             )
     else:
-        if config.QUALITY.lower() == "high":
+        if Config.QUALITY.lower() == "high":
             return MediaStream(
                 song.remote,
                 AudioQuality.HIGH,
                 video_flags=MediaStream.Flags.IGNORE,
                 headers=song.headers,
             )
-        elif config.QUALITY.lower() == "medium":
+        elif Config.QUALITY.lower() == "medium":
             return MediaStream(
                 song.remote,
                 AudioQuality.MEDIUM,
                 video_flags=MediaStream.Flags.IGNORE,
                 headers=song.headers,
             )
-        elif config.QUALITY.lower() == "low":
+        elif Config.QUALITY.lower() == "low":
             return MediaStream(
                 song.remote,
                 AudioQuality.LOW,
