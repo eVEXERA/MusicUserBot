@@ -12,11 +12,11 @@ import aiohttp
 import asyncio
 import aiofiles
 from Player import Config
-from Player import Gana
+from Player.Song import Gana
 from pyrogram import enums
 from pytube import Playlist
 from spotipy import Spotify
-from Player import get_group
+from Player.Groups import get_group
 from pyrogram.types import Message
 from PIL import Image, ImageDraw, ImageFont
 from youtubesearchpython import VideosSearch
