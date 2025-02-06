@@ -5,9 +5,9 @@ Copyright ©️ 2025
 
 
 import time
-from Player import load
+from Language import load
 from Player import Config
-from Player import app
+from Player.Stream import app
 from datetime import datetime
 from pytgcalls import PyTgCalls
 from traceback import format_exc
@@ -16,7 +16,7 @@ from pyrogram.types import Message
 from pytgcalls.types import Update
 from typing import Union, Callable
 from pyrogram.errors import UserAlreadyParticipant
-from Player import get_group, all_groups, set_default
+from Player.Groups import get_group, all_groups, set_default
 
 
 def register(func: Callable) -> Callable:
