@@ -21,7 +21,6 @@ from Player import (
     pytgcalls, set_group, set_title, all_groups, clear_queue, check_yt_url,
     extract_args, start_stream, shuffle_queue, delete_messages,
     get_spotify_playlist, get_youtube_playlist)
-"""
 
 REPO = """
 🤖 **Music Player**
