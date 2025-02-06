@@ -2,7 +2,7 @@ Telegram @Itz_Your_4Bhi
 Copyright ©️ 2025
 
 from Player.Song import Gana
-from core.Admins import BhaiChara, Teammates
+from Player.Admins import BhaiChara, Teammates
 from Player.Stream import (
               app,
                 ytdl,
