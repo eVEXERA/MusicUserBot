@@ -6,12 +6,12 @@ Copyright ©️ 2025
 
 import os
 from Player import Config
-from Player import Gana
+from Player.Song import Gana
 from pyrogram import Client
 from yt_dlp import YoutubeDL
 from pytgcalls import PyTgCalls
-from Player import generate_cover
-from Player import get_group, set_title
+from Player.Functions import generate_cover
+from Player.Groups import get_group, set_title
 from pytgcalls.types.stream import MediaStream
 from pyrogram.raw.types import InputPeerChannel
 from pytgcalls.types import AudioQuality, VideoQuality
