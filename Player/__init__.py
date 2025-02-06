@@ -7,8 +7,7 @@ from Language import load
 from Player.Admins import BhaiChara, Teammates
 from Player.Config import Config
 from Player.Queue import Queue
-from Player.Stream import 
-(
+from Player.Stream import (
               app,
                 ytdl,
                   abhi,
@@ -16,8 +15,7 @@ from Player.Stream import
                       start_stream,
                   )##
                   
-from Player.Groups import 
-(
+from Player.Groups import (
             get_group, 
               get_queue,
                 set_group, 
@@ -29,9 +27,7 @@ from Player.Groups import
                     ) 
                     
 
-from Player.Functions import 
-
-(
+from Player.Functions import (
          Khoj, 
            check_yt_url, 
              extract_args, 
