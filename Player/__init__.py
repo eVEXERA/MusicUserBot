@@ -1,7 +1,9 @@
-Telegram @Itz_Your_4Bhi
+"""Telegram @Itz_Your_4Bhi
 Copyright ©️ 2025
+"""
 
 from Player.Song import Gana
+from Language import load
 from Player.Admins import BhaiChara, Teammates
 from Config import Config
 from Player.Queue import Queue
