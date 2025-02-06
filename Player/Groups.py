@@ -5,7 +5,7 @@ Copyright ©️ 2025
 
 
 from Player import Config
-from Player import Queue
+from Player.Queue import Queue
 from pyrogram.types import Message
 from typing import Any, Dict, Union
 from pyrogram.raw.functions.channels import GetFullChannel
