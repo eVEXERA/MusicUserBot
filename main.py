@@ -76,11 +76,11 @@ async def play_stream(_, message: Message, lang):
     chat_id = message.chat.id
     group = get_group(chat_id)
     if group["admins_only"]:
-        check = await is_admin(message)
+        check = await Teammates(message)
         if not check:
             k = await message.reply_text(lang["notAllowed"])
             return await delete_messages([message, k])
-    song = await search(message)
+    song = await Khoj(message)
     if song is None:
         k = await message.reply_text(lang["notFound"])
         return await delete_messages([message, k])
@@ -111,7 +111,7 @@ async def live_stream(_, message: Message, lang):
     chat_id = message.chat.id
     group = get_group(chat_id)
     if group["admins_only"]:
-        check = await is_admin(message)
+        check = await Teammates(message)
         if not check:
             k = await message.reply_text(lang["notAllowed"])
             return await delete_messages([message, k])
@@ -470,7 +470,7 @@ async def import_playlist(_, message: Message, lang):
     chat_id = message.chat.id
     group = get_group(chat_id)
     if group["admins_only"]:
-        check = await is_admin(message)
+        check = await Teammates(message)
         if not check:
             k = await message.reply_text(lang["notAllowed"])
             return await delete_messages([message, k])
@@ -523,7 +523,8 @@ async def import_playlist(_, message: Message, lang):
 @language
 @handle_error
 async def update_restart(_, message: Message, lang):
-    check = await is_sudo(message)
+    check = await BhaiChara
+    (message)
     if not check:
         k = await message.reply_text(lang["notAllowed"])
         return await delete_messages([message, k])
