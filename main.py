@@ -13,12 +13,11 @@ from pytgcalls import filters as fl
 from pyrogram import Client, filters
 from pytgcalls.types import Update, ChatUpdate
 from pytgcalls.types.stream import StreamAudioEnded, StreamVideoEnded
-from Player import *
+from Player.Decorators import *
 from pytgcalls.exceptions import (
     NotInCallError, GroupCallNotFound, NoActiveGroupCall)
-"""
-from core import (
-    app, ytdl, safone, search, is_sudo, is_admin, get_group, get_queue,
+from Player import (
+    app, ytdl, abhi, search, is_sudo, is_admin, get_group, get_queue,
     pytgcalls, set_group, set_title, all_groups, clear_queue, check_yt_url,
     extract_args, start_stream, shuffle_queue, delete_messages,
     get_spotify_playlist, get_youtube_playlist)
