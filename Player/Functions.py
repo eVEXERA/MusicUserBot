@@ -283,7 +283,7 @@ async def special_to_normal(ctitle):
     return string
 
 
-async def get_youtube_playlist(pl_url: str, message: Message) -> AsyncIterator[Song]:
+async def get_youtube_playlist(pl_url: str, message: Message) -> AsyncIterator[Gana]:
     pl = Playlist(pl_url)
     for i in range(len(list(pl))):
         song = Gana(pl[i], message)
@@ -291,7 +291,7 @@ async def get_youtube_playlist(pl_url: str, message: Message) -> AsyncIterator[S
         yield song
 
 
-async def get_spotify_playlist(pl_url: str, message: Message) -> AsyncIterator[Song]:
+async def get_spotify_playlist(pl_url: str, message: Message) -> AsyncIterator[Gana]:
     pl_id = re.split("[^a-zA-Z0-9]", pl_url.split("spotify.com/playlist/")[1])[0]
     offset = 0
     while True:
