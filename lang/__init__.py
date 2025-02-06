@@ -6,5 +6,5 @@ Copyright ©️ 2025
 import json
 
 
-def load:
+def load(lan):
     return json.load(open(f"./lang/en.json", "r"))
